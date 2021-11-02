@@ -1,10 +1,12 @@
-####simple script to create SecureCRT Sessions
-
 import pandas
 
 input_source='/Users/calange/github/lab/cml/'
-labname="sr_pce"
+labname="vxlan_xr"
 input_excel_file=input_source+labname+'/cml.xlsx'
+
+# input_source='/Users/calange/github/lab/autopods/'
+# labname="vxlan_xr"
+# input_excel_file=input_source+labname+'/autopods.xlsx'
 
 def Main():
 
