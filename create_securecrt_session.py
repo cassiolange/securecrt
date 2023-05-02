@@ -8,10 +8,6 @@ import platform
 from Crypto.Hash import SHA256
 from Crypto.Cipher import AES, Blowfish
 
-cml_server = '192.168.1.246'
-username = 'admin'
-password = 'vucoki@3100ca25'
-
 ##Password encrypt from https://github.com/HyperSine/how-does-SecureCRT-encrypt-password
 ####thanks :D
 class SecureCRTCryptoV2:
@@ -44,12 +40,13 @@ class SecureCRTCryptoV2:
 
 def Main():
     configpassphrase = ''
-    # cml_server = crt.Dialog.Prompt("Enter CML Server", "Login", "", False)
-    # username = crt.Dialog.Prompt("Enter username for " + cml_server, "Login", "", False)
-    # password = crt.Dialog.Prompt("Enter password for "+ cml_server, "Login", "", True)
+    cml_server = crt.Dialog.Prompt("Enter CML Server", "Login", "", False)
+    username = crt.Dialog.Prompt("Enter username for " + cml_server, "Login", "", False)
+    password = crt.Dialog.Prompt("Enter password for "+ cml_server, "Login", "", True)
 
     cml_conn = virl2_client.ClientLibrary(cml_server, username, password, ssl_verify=False)
     all_labs = cml_conn.all_labs()
+    print(all_labs)
     for lab in all_labs:
         for node in lab.nodes():
             new_session = crt.OpenSessionConfiguration()
