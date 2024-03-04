@@ -1,2 +1,2 @@
-virl2-client==2.4.1
+virl2-client
 pycryptodome
